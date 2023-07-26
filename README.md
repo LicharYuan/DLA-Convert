@@ -1,4 +1,4 @@
-# dla connverter
+# DLA Converter
 
 This repo used to convert ONNX to CUDLA in  Orin / Xavier, as it required [cudla](https://docs.nvidia.com/cuda/cudla-api/index.html) lib. 
 
