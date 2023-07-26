@@ -1,6 +1,10 @@
 # dla connverter
 
-This repo used to convert ONNX to CUDLA in  Orin / Xavier, as it required [cudla](https://docs.nvidia.com/cuda/cudla-api/index.html) lib.
+This repo used to convert ONNX to CUDLA in  Orin / Xavier, as it required [cudla](https://docs.nvidia.com/cuda/cudla-api/index.html) lib. 
+
+- The conversion process strictly prohibits GPU fallback, ensuring full utilization of the DLA capabilities on Orin/Xavier devices.
+- The converted models can be efficiently executed using the cudla library.
+
 
 ## Usage
 
@@ -27,7 +31,7 @@ This repo used to convert ONNX to CUDLA in  Orin / Xavier, as it required [cudla
 
     For more information, please refer to the discussion: [Internal Error Assertion Failed (eglCreateStreamKHR)](https://forums.developer.nvidia.com/t/internal-error-assertion-failed-eglcreatestreamkhr-nullptr/68405)
 
-
+2. DLA has limited support for certain operations. Please review the [link](https://docs.nvidia.com/deeplearning/tensorrt/developer-guide/index.html#dla_layers) to ensure the operations used in your ONNX models are supported. In case of conversion failure, it might be due to unsupported operations.
 
 ## Some Engineering problems 
 
